@@ -6,13 +6,11 @@
 /*   By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:12:50 by rcarvalh          #+#    #+#             */
-/*   Updated: 2023/02/13 16:21:52 by rcarvalh         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:52:53 by rcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <signal.h>
-#include <stdio.h>
+#include "minitalk.h"
 
 void    send(int pid, char c);
 

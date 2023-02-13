@@ -6,13 +6,11 @@
 /*   By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 17:05:54 by rcarvalh          #+#    #+#             */
-/*   Updated: 2023/02/13 16:18:37 by rcarvalh         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:53:19 by rcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "minitalk.h"
 
 void    handler(int signal);
 
@@ -22,7 +20,7 @@ int	main(void)
 
 	//get PID of the calling process (server)
 	pid = getpid();
-	printf("Server PID = %d\n", pid);
+	ft_printf("Server PID = %d\n", pid);
 	//start listening for a message
 	signal(SIGUSR1, handler);
 	signal(SIGUSR2, handler);
