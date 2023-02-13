@@ -6,11 +6,13 @@
 /*   By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:12:50 by rcarvalh          #+#    #+#             */
-/*   Updated: 2023/01/30 10:39:32 by rcarvalh         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:21:52 by rcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include <unistd.h>
+#include <signal.h>
+#include <stdio.h>
 
 void    send(int pid, char c);
 
@@ -27,7 +29,7 @@ int	main(int argc, char **argv)
 	//if there's more than 2 arguments ||
 	//if the second argument (PID) is not a number ||
 	//if there's not a second argument (PID)
-	if (argc != 3 || !ft_isdigit(argv[1]) || !argv[2])
+	if (argc != 3 || /* !ft_isdigit(argv[1]) || */ !argv[2])
 	{
 		//print out instructions
 		ft_printf("Command: ./client [process ID] [message]\n");
@@ -42,7 +44,7 @@ int	main(int argc, char **argv)
 	while (argv[2][index] != '\0')
 	{
 		//send a char
-		send(pid, argv[2] [index++]);
+		send(pid, argv[2][index++]);
 	}
 	return 0;
 }
@@ -50,7 +52,7 @@ int	main(int argc, char **argv)
 //send a character to server, one bit at a time
 //kill sends a signal to the process specified in the first argument
 
-void	send(int pid, char character)
+void	send(int pid, char c)
 {
 	int	bit;
 	
@@ -61,7 +63,7 @@ void	send(int pid, char character)
 	{
 		//if there's a char &
 		//the bit is ON 
-		if (character & (1 << bit))
+		if (c & (1 << bit))
 		{
 			//send signal 2 (1)
 			kill(pid, SIGUSR2);
