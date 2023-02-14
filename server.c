@@ -6,7 +6,7 @@
 /*   By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 17:05:54 by rcarvalh          #+#    #+#             */
-/*   Updated: 2023/02/13 16:53:19 by rcarvalh         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:45:33 by rcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(void)
 
 	//get PID of the calling process (server)
 	pid = getpid();
-	ft_printf("Server PID = %d\n", pid);
+	ft_putnbr_fd(pid, 1);
+	write(1, "\n", 1);
 	//start listening for a message
 	signal(SIGUSR1, handler);
 	signal(SIGUSR2, handler);
@@ -39,7 +40,7 @@ void	handler(int signal)
 	if (signal == SIGUSR2)
 	{
 		//change bit to one
-		c = c | (1 << 1);
+		c = c | (1 << bit);
 	}
 	//next bit
 	bit++;

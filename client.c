@@ -6,7 +6,7 @@
 /*   By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:12:50 by rcarvalh          #+#    #+#             */
-/*   Updated: 2023/02/13 16:52:53 by rcarvalh         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:49:11 by rcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	if (argc != 3 || /* !ft_isdigit(argv[1]) || */ !argv[2])
 	{
 		//print out instructions
-		ft_printf("Command: ./client [process ID] [message]\n");
+		ft_putendl_fd("Command: ./client [process ID] [message]", 1);
 		//return error
 		return (1);
 	}

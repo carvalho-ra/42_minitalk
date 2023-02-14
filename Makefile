@@ -6,7 +6,7 @@
 #    By: rcarvalh <rcarvalh@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 10:32:44 by rcarvalh          #+#    #+#              #
-#    Updated: 2023/02/13 17:29:20 by rcarvalh         ###   ########.fr        #
+#    Updated: 2023/02/14 11:43:28 by rcarvalh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,9 @@ OBJ_S = $(SRC_S:.c=.o)
 
 OBJ_C = $(SRC_C:.c=.o)
 
-INC = -Ilibft -Ift_printf
+INC = -Ilibft
 
 LIBFT = -Llibft -lft
-
-LIBPF = -Lft_printf -lft
 
 CC = cc
 
@@ -37,9 +35,8 @@ RM = rm -rf
 
 $(NAME): $(OBJ_S) $(OBJ_C) 
 	make -C ./libft
-	make -C ./ft_printf
-	$(CC) $(CC_FLAGS) $(LIBFT) $(LIBPF) $(OBJ_S) -o server
-	$(CC) $(CC_FLAGS) $(LIBFT) $(LIBPF) $(OBJ_C) -o client
+	$(CC) $(CC_FLAGS) $(LIBFT) $(OBJ_S) -o server
+	$(CC) $(CC_FLAGS) $(LIBFT) $(OBJ_C) -o client
 
 all: $(NAME)
 	
