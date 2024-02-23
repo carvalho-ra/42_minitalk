@@ -8,9 +8,9 @@ This project aims to code a small data exchange program using UNIX signals.
 
 Compile the project using the provided Makefile: make
 
-Run binary ```sever``` to get PID
+At one terminal, run binary ```sever``` to get PID
 
-Run binary client with PID followed by message. Ex: ```client 12345 "Hello"```
+At another terminal, run binary client with PID followed by message. Ex: ```client 12345 "Hello"```
 
 ### 📋 Results
 
