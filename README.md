@@ -6,7 +6,7 @@ This project aims to code a small data exchange program using UNIX signals.
 
 ### 🛠️ Usage
 
-Compile the project using the provided Makefile: make
+Compile the project using the provided Makefile: ```make```
 
 At one terminal, run binary ```sever``` to get PID
 
